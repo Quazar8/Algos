@@ -1,10 +1,13 @@
 const binarySearch = require('./BinarySearch')
 const assert = require('assert')
+const MAX_NUMBER = 100000
+
 let arrOdd = [-12, -2, -1, 0, 1, 4, 5, 17, 19]
 let arrEven = [-3, -1, 0, 2, 34, 65]
 
 describe('Binary Search', () => {
-    describe('Array with even number of members', arrayTests(arrEven))
+    describe('Array with even number of elements', arrayTests(arrEven))
+    describe('Array with odd number of elements', arrayTests(arrOdd))
 })
 
 function arrayTests(arr) {
@@ -26,6 +29,9 @@ function arrayTests(arr) {
         })
         it('should return first index', () => {
             assert.strict.equal(binarySearch(arr, arr[0]), 0)
+        })
+        it('should return -1 when element is missing', () => {
+            assert.strict.equal(binarySearch(arr, MAX_NUMBER + 1), -1)
         })
     }
 }
