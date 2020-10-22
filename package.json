@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Quazar8/Algos/issues"
   },
-  "homepage": "https://github.com/Quazar8/Algos#readme"
+  "homepage": "https://github.com/Quazar8/Algos#readme",
+  "devDependencies": {
+    "mocha": "^8.2.0"
+  }
 }
