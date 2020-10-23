@@ -4,10 +4,14 @@ const MAX_NUMBER = 100000
 
 let arrOdd = [-12, -2, -1, 0, 1, 4, 5, 17, 19]
 let arrEven = [-3, -1, 0, 2, 34, 65]
+let floatArr = [-0.2, -0.1, 0.0, 2.3, 2.5]
+let mixed = [-3, -2.7, -1, 1, 2.3, 3.5, 6, 7.5]
 
 describe('Binary Search', () => {
     describe('Array with even number of elements', arrayTests(arrEven))
     describe('Array with odd number of elements', arrayTests(arrOdd))
+    describe('Array with floating point numbers', arrayTests(floatArr))
+    describe('Array with mixed decimal and whole numbers', arrayTests(mixed))
 })
 
 function arrayTests(arr) {
