@@ -7,12 +7,14 @@ let arrOdd = [-12, -2, -1, 0, 1, 4, 5, 17, 19]
 let arrEven = [-3, -1, 0, 2, 34, 65]
 let floatArr = [-0.2, -0.1, 0.0, 2.3, 2.5]
 let mixed = [-3, -2.7, -1, 1, 2.3, 3.5, 6, 7.5]
+let singleArr = [0]
 
 describe('Binary Search', () => {
     describe('Array with even number of elements', arrayTests(arrEven, binarySearch))
     describe('Array with odd number of elements', arrayTests(arrOdd, binarySearch))
     describe('Array with floating point numbers', arrayTests(floatArr, binarySearch))
     describe('Array with mixed decimal and whole numbers', arrayTests(mixed, binarySearch))
+    describe('Array with one element in it', testSingleArr(singleArr, binarySearch))
 })
 
 describe('Binary Search Second Method', () => {
@@ -20,6 +22,7 @@ describe('Binary Search Second Method', () => {
     describe('Array with odd number of elements', arrayTests(arrOdd, binarySearchSecond))
     describe('Array with floating point numbers', arrayTests(floatArr, binarySearchSecond))
     describe('Array with mixed decimal and whole numbers', arrayTests(mixed, binarySearchSecond))
+    describe('Array with one element in it', testSingleArr(singleArr, binarySearchSecond))
 })
 
 function arrayTests(arr, method) {
@@ -43,6 +46,28 @@ function arrayTests(arr, method) {
             assert.strict.equal(method(arr, arr[0]), 0)
         })
         it('should return -1 when element is missing', () => {
+            assert.strict.equal(method(arr, MAX_NUMBER + 1), -1)
+        })
+
+    }
+}
+
+function testSingleArr(arr, method){
+    return () => {
+        it(`should return 0 when the only element
+            in it is being searched for`, () => {
+                assert.strict.equal(method(arr, arr[0]), 0)
+            })
+        it(`should return -1 when the value 
+            is missing in the array`, () => {
+                assert.strict.equal(method(arr, MAX_NUMBER + 1), -1)
+            })
+    }
+}
+
+function testEmptyArr(arr, method){
+    return () => {
+        it('should return -1 always', () => {
             assert.strict.equal(method(arr, MAX_NUMBER + 1), -1)
         })
     }
