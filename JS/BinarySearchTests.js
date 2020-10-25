@@ -1,4 +1,5 @@
 const binarySearch = require('./BinarySearch')
+const binarySearchSecond = require('./BinarySearchSecond')
 const assert = require('assert')
 const MAX_NUMBER = 100000
 

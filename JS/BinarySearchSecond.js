@@ -1,7 +1,4 @@
-const binarySearch = require("./BinarySearch")
-
 let f = (x) => Math.floor(x)
-let arr = [0, 1, 2, 3, 4]
 
 let binarySearchSecond = (arr, val) => {
     let mid = 0
@@ -15,4 +12,4 @@ let binarySearchSecond = (arr, val) => {
     return -1 
 }
 
-console.log(binarySearchSecond(arr, 5))
+module.exports = binarySearchSecond
