@@ -15,6 +15,7 @@ describe('Binary Search', () => {
     describe('Array with floating point numbers', arrayTests(floatArr, binarySearch))
     describe('Array with mixed decimal and whole numbers', arrayTests(mixed, binarySearch))
     describe('Array with one element in it', testSingleArr(singleArr, binarySearch))
+    describe('Array with no elements', testEmptyArr([], binarySearch))
 })
 
 describe('Binary Search Second Method', () => {
@@ -23,6 +24,7 @@ describe('Binary Search Second Method', () => {
     describe('Array with floating point numbers', arrayTests(floatArr, binarySearchSecond))
     describe('Array with mixed decimal and whole numbers', arrayTests(mixed, binarySearchSecond))
     describe('Array with one element in it', testSingleArr(singleArr, binarySearchSecond))
+    describe('Array with no elements', testEmptyArr([], binarySearchSecond))
 })
 
 function arrayTests(arr, method) {
